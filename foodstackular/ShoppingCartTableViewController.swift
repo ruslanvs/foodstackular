@@ -7,45 +7,94 @@
 //
 
 import UIKit
+import CoreData
 
 class ShoppingCartTableViewController: UITableViewController {
+    
+    let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+    
+    var cart = [Ingredient]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchAll()
+        tableView.reloadData()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    
+    func fetchAll(){
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Ingredient")
+        do {
+            let result = try managedObjectContext.fetch(request)
+            cart = result as! [Ingredient]
+            print ( cart )
+        } catch {
+            print( error )
+        }
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return cart.count
+    }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        let item = cart[indexPath.row]
+        managedObjectContext.delete(item)
+        appDelegate.saveContext()
+        cart.remove(at: indexPath.row)
+        tableView.reloadData()
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cartCell", for: indexPath) as! CartCell
+        
+        if let ingName = cart[indexPath.row].name as? String {
+            cell.ingredientLabel.text = ingName
+        }
+        
+        if let ingQ = cart[indexPath.row].quantity as? Double {
+            cell.amountLabel.text = String(ingQ)
+            
+        }
+        if let ingU = cart[indexPath.row].unit as? String {
+            let stringName = cell.amountLabel.text! + ingU
+            cell.amountLabel.text = stringName
+        }
+        
+        if let recipeImg = cart[indexPath.row].imgUrl as? String{
+            
+            let urlString = recipeImg
+            let url = URL(string: urlString)
+            
+            URLSession.shared.dataTask(with: url!) { (data, response, error) in
+                if error != nil {
+                    print("Failed fetching image:", error)
+                    return
+                }
+                
+                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                    print("Not a proper HTTPURLResponse or statusCode")
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    cell.ingredientImage.image = UIImage(data: data!)
+                }
+                }.resume()
+        }
 
-        // Configure the cell...
+
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

@@ -10,6 +10,7 @@
 		4AB1FEC42061FD6E00A69E3C /* ShoppingCartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB1FEC32061FD6E00A69E3C /* ShoppingCartTableViewController.swift */; };
 		4AB1FEC62061FDA500A69E3C /* RecipeListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB1FEC52061FDA500A69E3C /* RecipeListTableViewController.swift */; };
 		4AB1FEC82061FDCF00A69E3C /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB1FEC72061FDCF00A69E3C /* RecipeViewController.swift */; };
+		A65F320D2062F4F000F8B87B /* cartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F320C2062F4F000F8B87B /* cartCell.swift */; };
 		A6CED0C62061F04F00E8757C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CED0C52061F04F00E8757C /* AppDelegate.swift */; };
 		A6CED0CB2061F04F00E8757C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6CED0C92061F04F00E8757C /* Main.storyboard */; };
 		A6CED0CE2061F04F00E8757C /* foodstackular.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A6CED0CC2061F04F00E8757C /* foodstackular.xcdatamodeld */; };
@@ -17,6 +18,7 @@
 		A6CED0D32061F04F00E8757C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6CED0D12061F04F00E8757C /* LaunchScreen.storyboard */; };
 		A6CED0DE2061F05000E8757C /* foodstackularTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CED0DD2061F05000E8757C /* foodstackularTests.swift */; };
 		A6CED0E92061F05000E8757C /* foodstackularUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CED0E82061F05000E8757C /* foodstackularUITests.swift */; };
+		A6F94D512062DD6B00F6C685 /* recipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F94D502062DD6B00F6C685 /* recipeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,7 @@
 		4AB1FEC32061FD6E00A69E3C /* ShoppingCartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartTableViewController.swift; sourceTree = "<group>"; };
 		4AB1FEC52061FDA500A69E3C /* RecipeListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListTableViewController.swift; sourceTree = "<group>"; };
 		4AB1FEC72061FDCF00A69E3C /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		A65F320C2062F4F000F8B87B /* cartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cartCell.swift; sourceTree = "<group>"; };
 		A6CED0C22061F04F00E8757C /* foodstackular.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodstackular.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6CED0C52061F04F00E8757C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6CED0CA2061F04F00E8757C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,6 +56,7 @@
 		A6CED0E42061F05000E8757C /* foodstackularUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = foodstackularUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6CED0E82061F05000E8757C /* foodstackularUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foodstackularUITests.swift; sourceTree = "<group>"; };
 		A6CED0EA2061F05000E8757C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6F94D502062DD6B00F6C685 /* recipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recipeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 			children = (
 				A6CED0C52061F04F00E8757C /* AppDelegate.swift */,
 				A6CED0C92061F04F00E8757C /* Main.storyboard */,
+				A65F320C2062F4F000F8B87B /* cartCell.swift */,
+				A6F94D502062DD6B00F6C685 /* recipeCell.swift */,
 				4AB1FEC72061FDCF00A69E3C /* RecipeViewController.swift */,
 				4AB1FEC52061FDA500A69E3C /* RecipeListTableViewController.swift */,
 				4AB1FEC32061FD6E00A69E3C /* ShoppingCartTableViewController.swift */,
@@ -270,9 +276,11 @@
 			files = (
 				4AB1FEC62061FDA500A69E3C /* RecipeListTableViewController.swift in Sources */,
 				A6CED0CE2061F04F00E8757C /* foodstackular.xcdatamodeld in Sources */,
+				A65F320D2062F4F000F8B87B /* cartCell.swift in Sources */,
 				4AB1FEC82061FDCF00A69E3C /* RecipeViewController.swift in Sources */,
 				4AB1FEC42061FD6E00A69E3C /* ShoppingCartTableViewController.swift in Sources */,
 				A6CED0C62061F04F00E8757C /* AppDelegate.swift in Sources */,
+				A6F94D512062DD6B00F6C685 /* recipeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,7 +447,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A5GXPYGGQ2;
+				DEVELOPMENT_TEAM = 4LCWFZ2JA9;
 				INFOPLIST_FILE = foodstackular/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = none.foodstackular;
@@ -454,7 +462,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A5GXPYGGQ2;
+				DEVELOPMENT_TEAM = 4LCWFZ2JA9;
 				INFOPLIST_FILE = foodstackular/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = none.foodstackular;
